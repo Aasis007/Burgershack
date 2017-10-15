@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1068464014645",
+    "firebase_url": "https://burgershack-8feaf.firebaseio.com",
+    "project_id": "burgershack-8feaf",
+    "storage_bucket": "burgershack-8feaf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068464014645:android:716acdfb87fe5d6a",
+        "android_client_info": {
+          "package_name": "com.example.laptop.burgershack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068464014645-dmf9v6qstmt8l0q514ccrvd4gq3lq2f7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.laptop.burgershack",
+            "certificate_hash": "f8a40fcec7c4fd85541fed93ded6f068d5fec08d"
+          }
+        },
+        {
+          "client_id": "1068464014645-gks1h7h9bet6rmdgg94fd6u3giohd5ur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOAkT0Yiqb2ydlm89nqeelVMCjdQDJkpU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068464014645-gks1h7h9bet6rmdgg94fd6u3giohd5ur.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
