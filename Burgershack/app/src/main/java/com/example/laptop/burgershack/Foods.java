@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -31,6 +32,11 @@ public class Foods extends AppCompatActivity {
         setContentView(R.layout.activity_foods);
 
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
+
         //Firebase
         database = FirebaseDatabase.getInstance();
         foods = database.getReference("Foods");
@@ -55,14 +61,14 @@ public class Foods extends AppCompatActivity {
         adapter = new FirebaseRecyclerAdapter<Food, FoodViewHolder>(Food.class,
                 R.layout.food_item,
                 FoodViewHolder.class,
-                foods.orderByChild("MenuId:").equalTo(categoryId)
+                foods.orderByChild("MenuId").equalTo(categoryId)
 
         ) {
             @Override
             protected void populateViewHolder(FoodViewHolder viewHolder, final Food model, int position) {
 
                 viewHolder.food_name.setText(model.getName());
-                System.out.println("CategoryId:"+model.getMenuId());
+                System.out.println("CategoryId"+model.getMenuId());
 
 
                 Picasso.with(getBaseContext()).load(model.getImage())
