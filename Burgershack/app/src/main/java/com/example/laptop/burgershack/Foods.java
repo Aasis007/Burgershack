@@ -1,10 +1,10 @@
 package com.example.laptop.burgershack;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -30,11 +30,6 @@ public class Foods extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foods);
-
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("");
-        setSupportActionBar(toolbar);
 
 
         //Firebase
@@ -68,7 +63,7 @@ public class Foods extends AppCompatActivity {
             protected void populateViewHolder(FoodViewHolder viewHolder, final Food model, int position) {
 
                 viewHolder.food_name.setText(model.getName());
-                System.out.println("CategoryId"+model.getMenuId());
+                System.out.println("CategoryId:"+model.getMenuId());
 
 
                 Picasso.with(getBaseContext()).load(model.getImage())
@@ -78,8 +73,10 @@ public class Foods extends AppCompatActivity {
                 viewHolder.setItemclicklistner(new Itemclicklistner() {
                     @Override
                     public void onclick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(Foods.this, "" + local.getName(), Toast.LENGTH_SHORT).show();
-
+                        //Start description Activity here
+                        Intent foodDesc = new Intent(Foods.this,Food_desc.class);
+                        foodDesc.putExtra("FoodId",adapter.getRef(position).getKey());
+                        startActivity(foodDesc);
 
                     }
                 });

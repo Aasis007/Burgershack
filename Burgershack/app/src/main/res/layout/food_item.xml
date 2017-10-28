@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="200dp"
     app:cardElevation="4dp"
-    android:layout_marginBottom="4dp">
+    android:layout_marginBottom="8dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="500dp"
             android:id="@+id/food_image"
             android:src="@drawable/bkr"
             android:scaleType="centerCrop"/>
