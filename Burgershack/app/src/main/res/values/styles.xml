@@ -21,7 +21,7 @@
 
     <style name="ExpandedAppBar" parent="@android:style/TextAppearance.Material.Title" tools:targetApi="lollipop">
 
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/black</item>
         <item name="android:textStyle">normal</item>
     </style>
 

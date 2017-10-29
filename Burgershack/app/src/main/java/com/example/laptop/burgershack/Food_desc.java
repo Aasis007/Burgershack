@@ -5,6 +5,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,7 +27,7 @@ public class Food_desc extends AppCompatActivity {
     FloatingActionButton btn_cart;
     ElegantNumberButton numberButton;
 
-    String foodID="";
+    String FoodId="";
 
     FirebaseDatabase database;
     DatabaseReference foods;
@@ -56,10 +57,10 @@ public class Food_desc extends AppCompatActivity {
         //Get foddID from Intent
 
         if (getIntent() != null)
-            foodID = getIntent().getStringExtra("FoodID");
-        if (foodID!=null && !foodID.isEmpty()){
+            FoodId = getIntent().getStringExtra("FoodId");
+        if (FoodId!=null && !FoodId.isEmpty()){
 
-            getDetailFood(foodID);
+            getDetailFood(FoodId);
         }
 
 
@@ -67,9 +68,9 @@ public class Food_desc extends AppCompatActivity {
 
     }
 
-    private void getDetailFood(String foodID) {
+    private void getDetailFood(String FoodId) {
 
-        foods.child(foodID).addValueEventListener(new ValueEventListener() {
+        foods.child(FoodId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Food food = dataSnapshot.getValue(Food.class);
