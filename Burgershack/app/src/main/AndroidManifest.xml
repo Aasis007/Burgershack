@@ -30,6 +30,7 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".Foods" />
         <activity android:name=".Food_desc"></activity>
+        <activity android:name=".Cart"></activity>
     </application>
 
 </manifest>
