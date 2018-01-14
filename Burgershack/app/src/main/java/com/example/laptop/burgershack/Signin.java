@@ -66,11 +66,13 @@ public class Signin extends AppCompatActivity {
 
 
 
-                            else
+                            else {
                                 Toast.makeText(Signin.this, "Signin Failed!!", Toast.LENGTH_SHORT).show();
-                        } else
-                            mDialog.dismiss();
-                            Toast.makeText(Signin.this, "U have to signUp first", Toast.LENGTH_SHORT).show();
+                            }
+                        } //else {
+                           // mDialog.dismiss();
+                            //Toast.makeText(Signin.this, "U have to signUp first", Toast.LENGTH_SHORT).show();
+                       // }
                     }
 
                     @Override

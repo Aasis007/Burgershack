@@ -60,8 +60,13 @@ public class Cart extends AppCompatActivity {
         placeorder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (cart.isEmpty()) {
+                    Toast.makeText(Cart.this, "Cart is Empty Please add some items..", Toast.LENGTH_SHORT).show();
+                } else {
+
                     //Aleart dialog for address popup
                     showAleartDialog();
+                }
             }
         });
         loadListFood();
@@ -125,7 +130,7 @@ public class Cart extends AppCompatActivity {
         int total = 0;
         for (Order order:cart)
             total+=(Integer.parseInt(order.getPrice()))*(Integer.parseInt(order.getQuantity()));
-        Locale locale = new Locale("en","US");
+        Locale locale = new Locale("en","IN");
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
         Total.setText(fmt.format(total));
 

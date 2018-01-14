@@ -60,7 +60,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewholder>{
     @Override
     public void onBindViewHolder(CartViewholder holder, int position) {
 
-        Locale locale = new Locale("en","US");
+        Locale locale = new Locale("en","IN");
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
         int price = (Integer.parseInt(listData.get(position).getPrice()))*(Integer.parseInt(listData.get(position).getQuantity()));
         holder.tvcartprice.setText(fmt.format(price));
